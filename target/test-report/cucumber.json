@@ -1,0 +1,281 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-02-01T15:51:05.872Z",
+        "line": 11,
+        "name": "Verify year divide by 4",
+        "description": "",
+        "id": "test-leap-year;verify-year-divide-by-4;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 50163000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "an year in \"2007\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2007\"",
+                  "offset": 11
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 526000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "year is not divided by 4",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 23
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.year_is_not_divided_by(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1783000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "give response \"false\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"false\"",
+                  "offset": 14
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-02-01T15:51:06.004Z",
+        "line": 22,
+        "name": "Verify year divide by 4 but not century",
+        "description": "",
+        "id": "test-leap-year;verify-year-divide-by-4-but-not-century;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 225000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "an year in \"2012\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2012\"",
+                  "offset": 11
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 227000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "year is divisible by 4 and not a century",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 21
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.year_is_divisible_by_and_not_a_century(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 189000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "give response \"true\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"true\"",
+                  "offset": 14
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-02-01T15:51:06.010Z",
+        "line": 33,
+        "name": "Verify year divide by 4,centure but not by 400",
+        "description": "",
+        "id": "test-leap-year;verify-year-divide-by-4-centure-but-not-by-400;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 210000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "an year in \"2600\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2600\"",
+                  "offset": 11
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 188000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "year is divisible by 4 and a century and not divisible by 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 21
+                },
+                {
+                  "val": "400",
+                  "offset": 58
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.year_is_divisible_by_and_a_century_and_not_divisible_by(java.lang.Integer,java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 187000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "give response \"false\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"false\"",
+                  "offset": 14
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-02-01T15:51:06.015Z",
+        "line": 43,
+        "name": "Verify year divide by 4,centure and 400",
+        "description": "",
+        "id": "test-leap-year;verify-year-divide-by-4-centure-and-400;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 273000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "an year in \"2000\" format",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2000\"",
+                  "offset": 11
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 232000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "year is divisible by 4 and a century and divisible by 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 21
+                },
+                {
+                  "val": "400",
+                  "offset": 54
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.year_is_divisible_by_and_a_century_and_divisible_by(java.lang.Integer,java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 197000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "give response \"true\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"true\"",
+                  "offset": 14
+                }
+              ],
+              "location": "com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Test Leap Year",
+    "description": "",
+    "id": "test-leap-year",
+    "keyword": "Feature",
+    "uri": "file:com.db.resource/features/leapyear_validation.feature",
+    "tags": []
+  }
+]
