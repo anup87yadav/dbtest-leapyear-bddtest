@@ -9,6 +9,7 @@ Scenario Outline: Verify year divide by 4
 	Examples: 
 		|year|	value	|
 		|2007|	false	|
+		|2008|	false	| 
 			
 		
 		
@@ -20,6 +21,7 @@ Scenario Outline: Verify year divide by 4 but not century
 	Examples: 
 		|year|	value	|
 		|2012|	true	|
+		|1600|	true	|
 		
 		
 		
@@ -31,6 +33,7 @@ Scenario Outline: Verify year divide by 4,centure but not by 400
 	Examples: 
 		|year|	value	|
 		|2600|	false	|
+		|1200|	false	|
 		
 		
 Scenario Outline: Verify year divide by 4,centure and 400 
@@ -41,4 +44,5 @@ Scenario Outline: Verify year divide by 4,centure and 400
 	Examples: 
 		|year|	value	|
 		|2000|	true	|
+		|2001|	true	|
 		

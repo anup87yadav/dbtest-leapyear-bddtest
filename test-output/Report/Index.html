@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Feb 1, 2021 09:21:05 pm</span>
+                    <span class="badge badge-primary">Feb 1, 2021 09:42:56 pm</span>
                 </a>
             </li>
         </ul>
@@ -67,7 +67,15 @@
           <span class="title">Tests</span>
         </a>
       </li>
-            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+            <li class="nav-item dropdown" onclick="toggleView('exception-view')">
+        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
+          <span class="icon-holder">
+            <i class="fa fa-bug"></i>
+          </span>
+          <span class="title">Exception</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
         <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
           <span class="icon-holder">
             <i class="fa fa-bar-chart"></i>
@@ -96,7 +104,7 @@
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
-						
+						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
 						
 						
 						
@@ -109,28 +117,28 @@
 		</div>
 		<div class="test-list-wrapper scrollable">
 			<ul class="test-list-item">
-				<li class="test-item"  status="pass" test-id="1"
+				<li class="test-item"  status="fail" test-id="1"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar pass-bg">
-						<i class="fa fa-check text-white"></i>
+					<div class="status-avatar fail-bg">
+						<i class="fa fa-times text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">Test Leap Year</p>
-							<p class="duration text-sm">0h 0m 0s+31ms</p>
-							<span class="datetime">21:21:05 pm</span>
+							<p class="duration text-sm">0h 0m 0s+65ms</p>
+							<span class="datetime">21:42:57 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">Test Leap Year</h5>
-									<span class='badge badge-success'>02.01.2021 21:21:05</span>
-									<span class='badge badge-danger'>02.01.2021 21:21:06</span>
-									<span class='badge badge-default'>0h 0m 0s+31ms</span>
+									<h5 class="test-status text-fail">Test Leap Year</h5>
+									<span class='badge badge-success'>02.01.2021 21:42:57</span>
+									<span class='badge badge-danger'>02.01.2021 21:42:57</span>
+									<span class='badge badge-default'>0h 0m 0s+65ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -143,8 +151,8 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Verify year divide by 4</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -182,14 +190,54 @@
 				<div class="details"></div>
 							</div>
 						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Verify year divide by 4</div>
+									<div class="status-avatar float-left fail-bg">
+										<i class="fa fa-times text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given an year in "2008" format</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.db.stepDefinations.LeapYear_StepDefination.year_is_not_divided_by(java.lang.Integer)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When year is not divided by 4</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)">
+										<span class="alert-icon fail-bg">
+											<i class="fa fa-times text-white"></i>
+										</span>
+										<span>Then give response "false"</span>
+									</div>
+				<textarea disabled class="code-block">java.lang.AssertionError: expected:<false> but was:<true>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.db.stepDefinations.LeapYear_StepDefination.give_response(LeapYear_StepDefination.java:36)
+	at ✽.give response "false"(file:///Users/ayadav/eclipse-workspace/dbtest-leapyear-bddtest/com.db.resource/features/leapyear_validation.feature:7)
+</textarea>
+							</div>
+						</div>
 				</div>
 	</div>
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Verify year divide by 4 but not century</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -227,14 +275,54 @@
 				<div class="details"></div>
 							</div>
 						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Verify year divide by 4 but not century</div>
+									<div class="status-avatar float-left fail-bg">
+										<i class="fa fa-times text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given an year in "1600" format</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.db.stepDefinations.LeapYear_StepDefination.year_is_divisible_by_and_not_a_century(java.lang.Integer)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When year is divisible by 4 and not a century</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)">
+										<span class="alert-icon fail-bg">
+											<i class="fa fa-times text-white"></i>
+										</span>
+										<span>Then give response "true"</span>
+									</div>
+				<textarea disabled class="code-block">java.lang.AssertionError: expected:<true> but was:<false>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.db.stepDefinations.LeapYear_StepDefination.give_response(LeapYear_StepDefination.java:36)
+	at ✽.give response "true"(file:///Users/ayadav/eclipse-workspace/dbtest-leapyear-bddtest/com.db.resource/features/leapyear_validation.feature:19)
+</textarea>
+							</div>
+						</div>
 				</div>
 	</div>
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Verify year divide by 4,centure but not by 400</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -272,14 +360,54 @@
 				<div class="details"></div>
 							</div>
 						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Verify year divide by 4,centure but not by 400</div>
+									<div class="status-avatar float-left fail-bg">
+										<i class="fa fa-times text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given an year in "1200" format</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.db.stepDefinations.LeapYear_StepDefination.year_is_divisible_by_and_a_century_and_not_divisible_by(java.lang.Integer,java.lang.Integer)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When year is divisible by 4 and a century and not divisible by 400</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)">
+										<span class="alert-icon fail-bg">
+											<i class="fa fa-times text-white"></i>
+										</span>
+										<span>Then give response "false"</span>
+									</div>
+				<textarea disabled class="code-block">java.lang.AssertionError: expected:<false> but was:<true>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.db.stepDefinations.LeapYear_StepDefination.give_response(LeapYear_StepDefination.java:36)
+	at ✽.give response "false"(file:///Users/ayadav/eclipse-workspace/dbtest-leapyear-bddtest/com.db.resource/features/leapyear_validation.feature:31)
+</textarea>
+							</div>
+						</div>
 				</div>
 	</div>
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Verify year divide by 4,centure and 400</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -317,9 +445,166 @@
 				<div class="details"></div>
 							</div>
 						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Verify year divide by 4,centure and 400</div>
+									<div class="status-avatar float-left fail-bg">
+										<i class="fa fa-times text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.db.stepDefinations.LeapYear_StepDefination.an_year_in_format(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given an year in "2001" format</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.db.stepDefinations.LeapYear_StepDefination.year_is_divisible_by_and_a_century_and_divisible_by(java.lang.Integer,java.lang.Integer)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When year is divisible by 4 and a century and divisible by 400</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.db.stepDefinations.LeapYear_StepDefination.give_response(java.lang.String)">
+										<span class="alert-icon fail-bg">
+											<i class="fa fa-times text-white"></i>
+										</span>
+										<span>Then give response "true"</span>
+									</div>
+				<textarea disabled class="code-block">java.lang.AssertionError: expected:<true> but was:<false>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.db.stepDefinations.LeapYear_StepDefination.give_response(LeapYear_StepDefination.java:36)
+	at ✽.give response "true"(file:///Users/ayadav/eclipse-workspace/dbtest-leapyear-bddtest/com.db.resource/features/leapyear_validation.feature:42)
+</textarea>
+							</div>
+						</div>
 				</div>
 	</div>
 </div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row exception-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Exception</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">1</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">java.lang.AssertionError</p>
+							<p class="duration text-sm">4 tests</p>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>java.lang.AssertionError</h4>
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>21:42:57 pm</td>
+									<td class='linked' test-id='10'>
+										Then give response "false"
+										<div class="">
+											<span class="badge badge-default">Verify year divide by 4</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>21:42:57 pm</td>
+									<td class='linked' test-id='19'>
+										Then give response "true"
+										<div class="">
+											<span class="badge badge-default">Verify year divide by 4 but not century</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>21:42:57 pm</td>
+									<td class='linked' test-id='28'>
+										Then give response "false"
+										<div class="">
+											<span class="badge badge-default">Verify year divide by 4,centure but not by 400</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>21:42:57 pm</td>
+									<td class='linked' test-id='37'>
+										Then give response "true"
+										<div class="">
+											<span class="badge badge-default">Verify year divide by 4,centure and 400</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</li>
 			</ul>
@@ -353,12 +638,12 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'>
-						<b>1</b> features passed
+					<div><small data-tooltip='0%'>
+						<b>0</b> features passed
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> features failed, 
+						<small data-tooltip='100%'><b>1</b> features failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -376,9 +661,9 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>4</b> scenarios passed</small></div>
+					<div><small data-tooltip='50%'><b>4</b> scenarios passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> scenarios failed, 
+						<small data-tooltip='50%'><b>4</b> scenarios failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -396,9 +681,9 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>12</b> steps passed</small></div>
+					<div><small data-tooltip='83.333%'><b>20</b> steps passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> steps failed, 
+						<small data-tooltip='16.667%'><b>4</b> steps failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -416,7 +701,7 @@
 							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>100.00%</span>
+							<span>.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -432,10 +717,10 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Scenarios</h6>
-							<h2 class="font-size-28 font-weight-light mt-3">4</h2>
+							<h2 class="font-size-28 font-weight-light mt-3">8</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>100.00%</span>
+							<span>50.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -451,7 +736,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Feb 1, 2021 09:21:05 pm</h4>
+							<h4 class="font-weight-light mt-4">Feb 1, 2021 09:42:56 pm</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -467,7 +752,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 0m 0s+488ms</h4>
+							<h4 class="font-weight-light mt-4">0h 0m 0s+523ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -533,36 +818,36 @@
 <script>
 	var statusGroup = {
 	    parentCount: 1,
-		passParent: 1,
-		failParent: 0,
+		passParent: 0,
+		failParent: 1,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 0,
-		childCount: 4,
+		exceptionsParent: 1,
+		childCount: 8,
 		passChild: 4,
-		failChild: 0,
+		failChild: 4,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 0,
-		grandChildCount: 12,
-		passGrandChild: 12,
-		failGrandChild: 0,
+		exceptionsChild: 4,
+		grandChildCount: 24,
+		passGrandChild: 20,
+		failGrandChild: 4,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 0,
-		eventsCount: 12,
-		passEvents: 12,
-		failEvents: 0,
+		exceptionsGrandChild: 4,
+		eventsCount: 24,
+		passEvents: 20,
+		failEvents: 4,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
@@ -574,7 +859,7 @@
 </script>
 <script>
 	var timeline = {
-	        "Test Leap Year":0.031
+	        "Test Leap Year":0.065
 	};
 </script>
                 </div>
